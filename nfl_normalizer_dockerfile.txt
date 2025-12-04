@@ -1,0 +1,6 @@
+FROM ubuntu
+WORKDIR /nfl-normalizer
+RUN apt-get update && apt-get install -y bash && rm -rf /var/lib/apt/lists/*
+COPY normalize_nfl.sh /bin/normalize_nfl.sh
+RUN chmod +x /bin/normalize_nfl.sh
+COPY nfl_game_scores.txt .
